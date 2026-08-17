@@ -247,8 +247,6 @@ Another next step can be to test debates with protocols where the debate is an i
 
 ## Advice for debate experiments with LLMs, VLMs and other toy models
 
-*(Draft — concrete recommendations distilled from the experiments above; to be expanded in a later pass.)*
-
 **Train the judge.** We observed significantly different dynamics with off-distribution ("untrained"), and on-distribution judges specifically trained to judge a given protocol. The theoretical basis of debate is supposed to hold when the judge is perfect but has limited compute, so debate working better than consultancy only on untrained judges would mean that it worked for the wrong reason in some sense. For LLMs, the judge can be trained either with RL or by optimizing its system prompt. It can also be beneficial to make the judge aware of the exact protocol and what it is supposed to achieve (In a more concrete sense, the judge has to reward the game in a way that makes it converge to an answer that benefits it).
 To avoid the judge LLM becoming capable enough to not need the help of more powerful agents, the amount of parameters and the CoT length of the judge can be limited.
 
