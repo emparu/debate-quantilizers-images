@@ -371,7 +371,7 @@ The judge always sees the same object: 4 binary features in reveal order, append
 
 CIFAR is 3-channel with the CNN widened $2\times$ (c1 = c2 = 64), making each path about $4\times$ dearer through the conv stack, hence the smaller search. On CIFAR this has the useful side effect that `consultancy_144` does double duty: it is the nested control for `consultancy_bits_144` *and* consultancy at the debate arms' exact mask search, so debate-vs-consultancy is search-matched there. Both runs are below the base sweep's 1296-mask search, so absolute numbers are not directly comparable to the D3 table; every comparison that matters is internal.
 
-**Baselines.** Four baselines run on the same judge architecture as the arms. *Gold* is the judge given the full image with no mask at all. *Random mask (1)* is a single uniform 4/36 mask with no agent and no claim input, which is the sparse-judge floor. *Random mask (ensemble)* is $\arg\max_c \frac{1}{N}\sum_m p[m,c]$, and we report it at every mask budget an arm searches *and* exactly over all $\binom{36}{4} = 58905$ masks: the matched-budget rows are the sharp comparison, since they put a protocol that searches $N$ masks against simply averaging $N$ random ones, while the all-masks row is the zero-capability limit that the protocol family collapses to. Finally, *consultancy* is the arm where $A$ commits a class and shows the single mask that best supports it, with the judge seeing the mask and $d_A$ and no adversary present.
+**Baselines.** Four baselines run on the same judge architecture as the arms. *Gold* is the judge given the full image with no mask at all. *Random mask (1)* is a single uniform 4/36 mask with no agent and no claim input, which is the sparse-judge floor. *Random mask (ensemble)* is $\arg\max_c \frac{1}{N}\sum_m p[m,c]$, and we report it at every mask budget an arm searches *and* exactly over all $\binom{36}{4} = 58{,}905$ masks: the matched-budget rows are the sharp comparison, since they put a protocol that searches $N$ masks against simply averaging $N$ random ones, while the all-masks row is the zero-capability limit that the protocol family collapses to. Finally, *consultancy* is the arm where $A$ commits a class and shows the single mask that best supports it, with the judge seeing the mask and $d_A$ and no adversary present.
 
 **Metrics and diagnostics.** For every arm we report selection accuracy $\Pr[\hat c = y]$, judge accuracy, and belief (the judge's softmax mass on $A$'s claim), all measured on the test set at the final epoch. The bits arms get three further diagnostics. *Codeword entropy* is the realised entropy of the 4-bit word, out of a possible 4, and says how much of the channel gets used at all. The *randomised-bit ablation* re-scores the *same* selected plays with a random codeword, and says whether the judge conditions on the channel. And $I(b;\text{claim})$ and $I(b;y \mid \text{claim})$, both computed per bit, separate what the bit says about $A$'s commitment from what it says about the truth *beyond* that commitment; we normalise both by $H(b)$ so that bits with different usage rates stay comparable.
 
@@ -388,7 +388,7 @@ CIFAR is 3-channel with the CNN widened $2\times$ (c1 = c2 = 64), making each pa
 | random mask (ens.) | 256 | — | — | 64.36 | — |
 | random mask (ens.) | 324 | — | — | 64.46 | — |
 | random mask (ens.) | 1296 | — | — | 64.60 | — |
-| random mask (ens. **all**) | 58905 | — | — | **64.57** | — |
+| random mask (ens. **all**) | 58,905 | — | — | **64.57** | — |
 | consultancy | 1296 | 1296 | 76.58 | **76.58** | 77.76 |
 | consultancy | 324 | 324 | 73.57 | 73.54 | 74.65 |
 | consultancy + 4 bits | 324 | 5184 | 72.48 | 72.50 | 75.57 |
@@ -405,7 +405,7 @@ CIFAR is 3-channel with the CNN widened $2\times$ (c1 = c2 = 64), making each pa
 | random mask (1) | 1 | — | — | 37.41 | — |
 | random mask (ens.) | 144 | — | — | 45.75 | — |
 | random mask (ens.) | 1296 | — | — | 46.14 | — |
-| random mask (ens. **all**) | 58905 | — | — | **46.12** | — |
+| random mask (ens. **all**) | 58,905 | — | — | **46.12** | — |
 | consultancy | 1296 | 1296 | 46.98 | **47.03** | 46.58 |
 | consultancy | 144 | 144 | 44.94 | 45.03 | 44.38 |
 | consultancy + 4 bits | 144 | 2304 | 44.67 | 44.70 | 43.99 |
