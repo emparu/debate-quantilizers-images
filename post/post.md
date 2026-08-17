@@ -363,7 +363,7 @@ That pairing makes the comparison clean, because the no-channel arm is a special
 
 There is a tempting alternative we did not use. Trying all $2^4 = 16$ symbol sequences on each mask costs the channel arm $16\times$ more judge evaluations than its control, and one could even that up by letting the control search $16\times$ more masks. But then the control would be searching a larger set of masks, and any difference between the two arms would mix together two effects: whether the symbols helped, and whether the deeper mask search helped. Those extra evaluations are what searching the symbol dimension costs, and searching the symbol dimension is the thing under test.
 
-Finally, we checked that this holds in the code and not only on paper: zeroing the judge's weights on the four bit inputs and re-running the (cell, symbol) search reproduces the no-channel play exactly — same cells, same claim, same $d_B$ — for every arm, on both datasets.
+Finally, we checked that this holds in the code and not only on paper. We take a channel judge and zero the head weights on its four bit inputs, so that it cannot react to the symbols, and we build a no-channel judge that computes the identical function on all its other inputs. Then we run the full (cell, symbol) search with the first judge — the 16 symbol sequences are still enumerated, they simply cannot change any score — and the plain cell-only search with the second, on the same sampled masks. The two produce the same play: same cells, same claim, same $d_B$, for every arm on both datasets.
 
 **Budget.** Both runs search fewer masks than the base sweep, and CIFAR-10 fewer than FashionMNIST:
 
