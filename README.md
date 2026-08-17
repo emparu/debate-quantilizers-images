@@ -37,8 +37,11 @@ This touches no datasets and no GPU: it reads the saved arrays only. To rebuild 
 capability-curve figures from the same arrays:
 
 ```bash
-python scripts/make_post_figures.py      # writes to plots/regenerated/
+python scripts/make_post_figures.py        # capability curves, from results/
+python scripts/make_bitchannel_figures.py  # bit-channel panels, from the notebook logs
 ```
+
+Both write to `plots/regenerated/` by default; pass `--out post/figures` to update the copies the post links to.
 
 ## The notebooks
 
