@@ -1,0 +1,10 @@
+# For scripts/ (no GPU, no datasets needed)
+numpy>=1.24
+matplotlib>=3.7
+pillow>=10.0
+
+# Additionally required to re-run the notebooks
+# torch>=2.0
+# torchvision>=0.15
+# huggingface_hub>=0.20     # notebooks 01 and 02 only
+# tqdm
