@@ -1,4 +1,4 @@
-# Measuring the effectiveness of AI Debate and quantilizers in image-based scalable oversight environments
+# Quantilized debate and consultancy in image environments: protocol design lessons for scalable oversight experiments
 
 ## Consultancy vs Debate: motivations and definitions
 

@@ -1,8 +1,8 @@
 # Debate, consultancy and quantilizers in an image-based scalable-oversight toy
 
 Code, saved results, trained judge weights and figures for the post
-**"Measuring the effectiveness of AI Debate and quantilizers in image-based scalable
-oversight environments"** ([`post/post.md`](post/post.md)).
+**"Quantilized debate and consultancy in image environments: protocol design lessons
+for scalable oversight experiments"** ([`post/post.md`](post/post.md)).
 
 The environment: images are downscaled to 18×18 and cut into a 6×6 grid of 3×3-pixel
 cells. A weak CNN **judge** classifies an image from a *mask* that reveals only
